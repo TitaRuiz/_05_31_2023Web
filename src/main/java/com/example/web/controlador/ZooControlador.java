@@ -1,8 +1,8 @@
-package com.hedima.motorplantilla.controlador;
+package com.example.web.controlador;
 
-import com.hedima.motorplantilla.modelo.Zoo;
-import com.hedima.motorplantilla.repositorio.IZooRepo;
-import com.hedima.motorplantilla.servicio.IZooService;
+
+import com.example.web.modelo.Zoo;
+import com.example.web.servicio.IZooService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +23,8 @@ public class ZooControlador {
         return "fconsultaunzoo";
     }
     @PostMapping("/unzoo")
-    public String consultarUnZoo(Zoo z, RedirectAttributes rd, Model modelo){
+    public String consultarUnZoo(Zoo z,  Model modelo){
          Zoo zBBDD= servicio.obtenerUno(z.getZooId());
-         rd.addFlashAttribute("z",zBBDD);
          modelo.addAttribute("animales",zBBDD.getAnimales());
         System.out.println("antes del redirect");
          return "fconsultaunzoo";

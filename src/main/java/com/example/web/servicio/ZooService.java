@@ -1,8 +1,9 @@
-package com.hedima.motorplantilla.servicio;
+package com.example.web.servicio;
 
 
-import com.hedima.motorplantilla.modelo.Zoo;
-import com.hedima.motorplantilla.repositorio.IZooRepo;
+
+import com.example.web.modelo.Zoo;
+import com.example.web.repositorio.IZooRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

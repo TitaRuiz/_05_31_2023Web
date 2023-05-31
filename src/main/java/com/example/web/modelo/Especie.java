@@ -1,4 +1,4 @@
-package com.hedima.motorplantilla.modelo;
+package com.example.web.modelo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
