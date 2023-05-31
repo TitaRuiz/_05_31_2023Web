@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Zoo</title>
+</head>
+<body>
+<h1>Consulta de Zoo</h1>
+
+<form th:action="@{/zoos/unzoo}" method="post" th:object="${zoo}">
+    <label for="zooid" >Id Zoo</label>
+    <input type="number" name="zooid" id="zooid" th:field="*{zooId}"/>
+    <input type="submit" value="Consultar"/>
+</form>
+<div th:if="${animales != null}">
+    <h2> animales del zoo</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Pais de Origen</th>
+            <th>Sexo</th>
+            <th>Continente</th>
+            <th>Fecha Nacimiento</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal: ${animales}">
+            <td>[[${animal.animalid}]]</td>
+            <td>[[${animal.paisOrigen}]]</td>
+            <td>[[${animal.sexo}]]</td>
+            <td>[[${animal.Continente}]]</td>
+            <td>[[${animal.fNacimiento}]]</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
